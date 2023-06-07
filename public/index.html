@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PFA</title>
+</head>
+<body>
+  <pre id="data-container"></pre>
+  <script>
+
+    // Fetch the JSON data from the server
+    fetch('/data')
+      .then(response => response.json())
+      .then(data => {
+        // Insert the JSON data into the container element
+        document.getElementById('data-container').textContent = JSON.stringify(data, null, 2);
+      });
+
+  </script>
+</body>
+</html>
